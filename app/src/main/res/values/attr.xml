@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name = "RoundView">
+        <attr name = "radius" format = "dimension" />
+        <attr name="style">
+            <enum name = "circle" value = "0" />
+            <enum name = "round" value = "1" />
+        </attr>
+        <attr name="straight_mode">
+            <flag name = "none" value = "0" />
+            <flag name = "left" value = "1" />
+            <flag name = "right" value = "2" />
+            <flag name = "top" value = "4" />
+            <flag name = "bottom" value = "8" />
+            <flag name = "left_right_top" value = "16" />
+            <flag name = "left_right_bottom" value = "17" />
+            <flag name = "left_top_right" value = "18" />
+            <flag name = "left_bottom_right" value = "19" />
+        </attr>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:style="round"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="left"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="right"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="top"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="bottom"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="left|top"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="right|top"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="left|bottom"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="right|bottom"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="left_right_top"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="left_right_bottom"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="left_top_right"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="left_bottom_right"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.RoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="left|right"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
