@@ -7,7 +7,7 @@
             <enum name = "circle" value = "0" />
             <enum name = "round" value = "1" />
         </attr>
-        <attr name="straight_mode">
+        <attr name="straight_mode2">
             <flag name = "none" value = "0" />
             <flag name = "left" value = "1" />
             <flag name = "right" value = "2" />
@@ -18,6 +18,9 @@
             <flag name = "left_top_right" value = "18" />
             <flag name = "left_bottom_right" value = "19" />
         </attr>
+
+        <attr name = "straight_mode" format = "string" />
     </declare-styleable>
+
 
 </resources>

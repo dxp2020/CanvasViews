@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.changf.canvas.activitys.RoundViewActivity;
+import com.changf.canvas.activitys.XfermodeRoundViewActivity;
 
 public class MainActivity extends Activity {
 
@@ -17,5 +18,9 @@ public class MainActivity extends Activity {
 
     public void circleAngleImage(View view){
         startActivity(new Intent(this,RoundViewActivity.class));
+    }
+
+    public void circleAngleImage2(View view){
+        startActivity(new Intent(this,XfermodeRoundViewActivity.class));
     }
 }

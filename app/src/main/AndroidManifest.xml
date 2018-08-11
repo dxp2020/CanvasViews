@@ -16,6 +16,7 @@
         </activity>
 
         <activity android:name=".activitys.RoundViewActivity"/>
+        <activity android:name=".activitys.XfermodeRoundViewActivity"/>
     </application>
 
 </manifest>

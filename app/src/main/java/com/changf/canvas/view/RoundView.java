@@ -39,10 +39,7 @@ public class RoundView extends View {
         straightMode = a.getInt(R.styleable.RoundView_straight_mode,0);
         a.recycle();
         src = BitmapFactory.decodeResource(getResources(), R.mipmap.meinv);
-
-        Log.e(TAG,"straightMode--"+straightMode);
     }
-
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {

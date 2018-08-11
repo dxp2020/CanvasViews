@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lt"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lb"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="rt"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="rb"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lt|rt"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lb|rb"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lt|lb"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="rt|rb"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lt|rb"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lb|rt"
+            app:style="circle"
+            app:radius="10dp"
+            />
+
+
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lt"
+            app:style="round"
+            app:radius="30dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lb"
+            app:style="round"
+            app:radius="30dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="rt"
+            app:style="round"
+            app:radius="30dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="rb"
+            app:style="round"
+            app:radius="30dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lt|rt"
+            app:style="round"
+            app:radius="30dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lb|rb"
+            app:style="round"
+            app:radius="30dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lt|lb"
+            app:style="round"
+            app:radius="30dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="rt|rb"
+            app:style="round"
+            app:radius="30dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lt|rb"
+            app:style="round"
+            app:radius="30dp"
+            />
+
+        <com.changf.canvas.view.XfermodeRoundView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            app:straight_mode="lb|rt"
+            app:style="round"
+            app:radius="30dp"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
