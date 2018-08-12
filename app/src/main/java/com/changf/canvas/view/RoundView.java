@@ -23,8 +23,8 @@ public class RoundView extends View {
     private int outWidth;
     private int outHeight;
     private int style;//0为clrcle、1为round
-    private int straightMode;
     private float radius;//圆角半径
+    private String[] straightMode = new String[]{};
 
 
     public RoundView(Context context) {
@@ -36,9 +36,12 @@ public class RoundView extends View {
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs,R.styleable.RoundView, 0, 0);
         radius = a.getDimension(R.styleable.RoundView_radius,10);
         style = a.getInt(R.styleable.RoundView_style,1);
-        straightMode = a.getInt(R.styleable.RoundView_straight_mode,0);
+        String straightModeStr = a.getString(R.styleable.RoundView_straight_mode);
         a.recycle();
         src = BitmapFactory.decodeResource(getResources(), R.mipmap.meinv);
+        if(straightModeStr!=null){
+            straightMode = straightModeStr.split("\\|");
+        }
     }
 
     @Override
@@ -79,7 +82,7 @@ public class RoundView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawBitmap(getRoundBitmap(),0,0,null);
+        canvas.drawBitmap(getRoundBitmap(),getPaddingLeft(),getPaddingTop(),null);
     }
 
     private Bitmap getRoundBitmap() {
@@ -102,62 +105,29 @@ public class RoundView extends View {
         Bitmap targetBitmap = Bitmap.createBitmap(outWidth,outHeight,Bitmap.Config.ARGB_8888);
 
         Canvas canvas = new Canvas(targetBitmap);
-        canvas.drawRoundRect(new RectF(getPaddingLeft(),getPaddingTop(),outWidth,outHeight),radius,radius,paint);
+        canvas.drawRoundRect(new RectF(0,0,outWidth,outHeight),radius,radius,paint);
 
-        drawStraight(canvas,paint,straightMode);
-
-        return targetBitmap;
-    }
-
-    private void drawStraight(Canvas canvas,Paint paint,int straightMode){
-        switch (straightMode){
-            case 1://left
-                canvas.drawRect(new RectF(getPaddingLeft(),getPaddingTop(),radius,outHeight),paint);
-                break;
-            case 2://right
-                canvas.drawRect(new RectF(getWidth()-getPaddingRight()-radius,getPaddingTop(),getWidth(),getHeight()),paint);
-                break;
-            case 4://top
-                canvas.drawRect(new RectF(getPaddingLeft(),getPaddingTop(),getWidth(),getPaddingTop()+radius),paint);
-                break;
-            case 8://bottom
-                canvas.drawRect(new RectF(getPaddingLeft(),getHeight()-getPaddingBottom()-radius,getWidth(),getHeight()),paint);
-                break;
-            case 5://left | top
-                canvas.drawRect(new RectF(getPaddingLeft(),getPaddingTop(),radius,radius+getPaddingTop()),paint);
-                break;
-            case 9://left | bottom
-                canvas.drawRect(new RectF(getPaddingLeft(),getHeight()-getPaddingBottom()-radius,getPaddingLeft()+radius,getHeight()),paint);
-                break;
-            case 10://right | bottom
-                canvas.drawRect(new RectF(getWidth()-getPaddingRight()-radius,getHeight()-getPaddingBottom()-radius,getWidth(),getHeight()),paint);
-                break;
-            case 3://left | right
-                canvas.drawRect(new RectF(getPaddingLeft(),getPaddingTop(),getWidth(),getHeight()),paint);
-                break;
-            case 6://right | top
-                canvas.drawRect(new RectF(getWidth()-getPaddingRight()-radius,getPaddingTop(),getWidth()-getPaddingRight(),radius+getPaddingTop()),paint);
-                break;
-            case 16://left_right_top
-                drawStraight(canvas,paint,1);
-                drawStraight(canvas,paint,6);
-                break;
-            case 17://left_right_bottom
-                drawStraight(canvas,paint,1);
-                drawStraight(canvas,paint,10);
-                break;
-            case 18://left_top_right
-                drawStraight(canvas,paint,5);
-                drawStraight(canvas,paint,2);
-                break;
-            case 19://left_bottom_right
-                drawStraight(canvas,paint,9);
-                drawStraight(canvas,paint,2);
-                break;
-            case 15://left | right | top | bottom
-                canvas.drawRect(new RectF(getPaddingLeft(),getPaddingTop(),getWidth(),getHeight()),paint);
-                break;
+        for(String mode:straightMode){
+            switch (mode){
+                case "lt":
+                    //左上直角
+                    canvas.drawRect(new RectF(0,0,radius,radius),paint);
+                    break;
+                case "lb":
+                    //左下直角
+                    canvas.drawRect(new RectF(0,outHeight-radius,radius,outHeight),paint);
+                    break;
+                case "rt":
+                    //右上直角
+                    canvas.drawRect(new RectF(outWidth-radius,0,outWidth,radius),paint);
+                    break;
+                case "rb":
+                    //右下直角
+                    canvas.drawRect(new RectF(outWidth-radius,outHeight-radius,outWidth,outHeight),paint);
+                    break;
+            }
         }
+        return targetBitmap;
     }
 
 }
