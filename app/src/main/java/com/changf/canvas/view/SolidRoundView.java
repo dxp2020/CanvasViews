@@ -4,40 +4,45 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.view.View;
 
 import com.changf.canvas.R;
 
-public class RoundView extends View {
-    private static final String TAG = "RoundView";
+public class SolidRoundView extends View {
+    private static final String TAG = "SolidRoundView";
 
     private Bitmap src;
     private int outWidth;
     private int outHeight;
     private int style;//0为clrcle、1为round
+    private float solidWidth;//边框宽度
     private float radius;//圆角半径
     private String[] straightMode = new String[]{};
 
 
-    public RoundView(Context context) {
+    public SolidRoundView(Context context) {
         this(context,null);
     }
 
-    public RoundView(Context context, AttributeSet attrs) {
+    public SolidRoundView(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs,R.styleable.RoundView, 0, 0);
         radius = a.getDimension(R.styleable.RoundView_radius,10);
+        solidWidth = a.getDimension(R.styleable.RoundView_solid_width,0);
         style = a.getInt(R.styleable.RoundView_style,1);
         String straightModeStr = a.getString(R.styleable.RoundView_straight_mode);
         a.recycle();
         src = BitmapFactory.decodeResource(getResources(), R.mipmap.meinv);
+
         if(straightModeStr!=null){
             straightMode = straightModeStr.split("\\|");
         }
@@ -81,31 +86,18 @@ public class RoundView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
         canvas.drawBitmap(getRoundBitmap(),getPaddingLeft(),getPaddingTop(),null);
     }
 
     private Bitmap getRoundBitmap() {
-        //宽高等比缩放
-        float scaleWidth = (float)outWidth/src.getWidth();
-        float scaleHeight = scaleWidth;
-        Matrix matrix = new Matrix();
-        matrix.setScale(scaleWidth,scaleHeight);
-
-        BitmapShader bitmapShader = new BitmapShader(src, Shader.TileMode.CLAMP,Shader.TileMode.CLAMP);
-        bitmapShader.setLocalMatrix(matrix);
-
         Paint paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setShader(bitmapShader);
-
-        src.recycle();
-
-        //由于decode的bitmap不能进行加工，只能创建一个新的bitmap来进行绘制
+        // 初始化目标bitmap
         Bitmap targetBitmap = Bitmap.createBitmap(outWidth,outHeight,Bitmap.Config.ARGB_8888);
-
         Canvas canvas = new Canvas(targetBitmap);
+        // 在画布上绘制圆角
         canvas.drawRoundRect(new RectF(0,0,outWidth,outHeight),radius,radius,paint);
-
         for(String mode:straightMode){
             switch (mode){
                 case "lt":
@@ -126,7 +118,40 @@ public class RoundView extends View {
                     break;
             }
         }
+        // 设置叠加模式
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+
+        //宽高等比缩放
+        float scaleWidth = (float)outWidth/src.getWidth();
+        float scaleHeight = scaleWidth;
+        Matrix matrix = new Matrix();
+        matrix.setScale(scaleWidth,scaleHeight);
+
+        Bitmap overlayBitmap = Bitmap.createBitmap(src,0,0,src.getWidth(),src.getHeight(),matrix,true);
+        Rect ret = new Rect(0,0, outWidth, outHeight);
+        //叠加图
+        canvas.drawBitmap(overlayBitmap,ret,ret,paint);
+
+        src.recycle();
+
+        setBitmapBorder(canvas);
         return targetBitmap;
     }
+
+    /**
+     * 给bitmap设置边框
+     * @param canvas
+     */
+    private void setBitmapBorder(Canvas canvas){
+        Rect rect = canvas.getClipBounds();
+        Paint paint = new Paint();
+        //设置边框颜色
+        paint.setColor(Color.GREEN);
+        paint.setStyle(Paint.Style.STROKE);
+        //设置边框宽度
+        paint.setStrokeWidth(20);
+        canvas.drawRect(rect, paint);
+    }
+
 
 }

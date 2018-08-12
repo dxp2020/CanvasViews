@@ -16,4 +16,10 @@
         android:text="Xfermode圆角图片"
         android:onClick="circleAngleImage2"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="带边框的圆角图片"
+        android:onClick="solidRoundView"
+        />
 </LinearLayout>

@@ -8,6 +8,7 @@
             <enum name = "round" value = "1" />
         </attr>
         <attr name = "straight_mode" format = "string" />
+        <attr name = "solid_width" format = "dimension" />
     </declare-styleable>
 
 </resources>
