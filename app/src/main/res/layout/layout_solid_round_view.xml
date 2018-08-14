@@ -44,6 +44,12 @@
             android:padding="10dp"
             />
 
+        <com.changf.canvas.view.PathView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            />
+
     </LinearLayout>
 
 </ScrollView>

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -36,7 +35,6 @@ public class HulaHoopView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.translate(getWidth()/2,getHeight()/2);
-        RectF rect = new RectF(-radius,-radius,radius,radius);
 
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);

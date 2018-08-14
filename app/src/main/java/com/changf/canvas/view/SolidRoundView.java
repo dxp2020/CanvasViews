@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
@@ -118,6 +119,7 @@ public class SolidRoundView extends View {
                     break;
             }
         }
+
         // 设置叠加模式
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
 
@@ -134,7 +136,19 @@ public class SolidRoundView extends View {
 
         src.recycle();
 
-        setBitmapBorder(canvas);
+
+        RectF rect = new RectF(0,0,outWidth,outHeight);
+        Path path = new Path();
+        path.moveTo(outWidth/2,0);
+        path.lineTo(0,0);
+        path.lineTo(0,outHeight);
+        path.addArc(rect,-90,270);
+
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(20);
+        canvas.drawPath(path,paint);
+
+
         return targetBitmap;
     }
 
