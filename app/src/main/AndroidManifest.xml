@@ -18,6 +18,7 @@
         <activity android:name=".activitys.RoundViewActivity"/>
         <activity android:name=".activitys.XfermodeRoundViewActivity"/>
         <activity android:name=".activitys.SolidRoundViewActivity"/>
+        <activity android:name=".activitys.ElasticBallViewActivity"/>
     </application>
 
 </manifest>

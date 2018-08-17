@@ -69,6 +69,7 @@ public class CheckView extends View {
         okBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.checkmark);
 
         animMaxPage = okBitmap.getWidth()/okBitmap.getHeight()-1;
+        animCurrentPage = animMaxPage;
 
         mHandler = new Handler() {
             @Override

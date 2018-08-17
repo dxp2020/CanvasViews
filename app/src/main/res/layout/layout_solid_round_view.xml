@@ -50,6 +50,17 @@
             android:padding="10dp"
             />
 
+        <com.changf.canvas.view.Bezier
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            />
+
+        <com.changf.canvas.view.RotatingPlaneView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            />
     </LinearLayout>
 
 </ScrollView>

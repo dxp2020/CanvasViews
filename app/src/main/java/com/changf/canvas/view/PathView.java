@@ -8,6 +8,8 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
 
+import java.util.Random;
+
 public class PathView extends View {
     private int layerNum = 6;//蜘蛛网的层数
     private int layerInteval;//每一层的间隔
@@ -64,6 +66,29 @@ public class PathView extends View {
 
         drawLines(canvas,paint);
         drawText(canvas,paint);
+        drawCover(canvas,paint);
+    }
+
+    private void drawCover(Canvas canvas, Paint paint) {
+        paint.setColor(Color.BLUE);
+        paint.setStyle(Paint.Style.FILL);
+
+        Path path = new Path();
+        for(int i=0;i<6;i++){
+            float radius = (new Random().nextInt(100)+1)*6*layerInteval/100f;
+            int x = (int) (radius * Math.cos(angle*i));
+            int y = (int) (radius * Math.sin(angle*i));
+            if(i==0){
+                path.moveTo(x,y);
+            }else{
+                path.lineTo(x,y);
+            }
+            canvas.drawCircle(x,y,6f,paint);
+        }
+        path.close();
+        paint.setColor(Color.BLUE);
+        paint.setAlpha(128);
+        canvas.drawPath(path,paint);
     }
 
     private void drawText(Canvas canvas, Paint textPaint) {
@@ -71,13 +96,32 @@ public class PathView extends View {
         Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
         float fontHeight = fontMetrics.descent - fontMetrics.ascent;
 
-        float padding = 15;
-        float radius = layerInteval*layerNum+padding+fontHeight;
+        float radius = layerInteval*layerNum;
 
         for(int i=0;i<layerNum;i++){
             float x = (float) (radius*Math.cos(angle*i));
             float y = (float) (radius*Math.sin(angle*i));
-            canvas.drawText(data[i],x,y,textPaint);
+            float width = textPaint.measureText(data[i]);
+            switch (i){
+                case 0:
+                    canvas.drawText(data[i],x+width,y,textPaint);
+                    break;
+                case 1:
+                    canvas.drawText(data[i],x,y+fontHeight,textPaint);
+                    break;
+                case 2:
+                    canvas.drawText(data[i],x-width,y+fontHeight,textPaint);
+                    break;
+                case 3:
+                    canvas.drawText(data[i],x-2*width,y,textPaint);
+                    break;
+                case 4:
+                    canvas.drawText(data[i],x-width,y-width,textPaint);
+                    break;
+                case 5:
+                    canvas.drawText(data[i],x,y-width,textPaint);
+                    break;
+            }
         }
     }
 

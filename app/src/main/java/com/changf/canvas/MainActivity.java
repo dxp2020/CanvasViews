@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.changf.canvas.activitys.ElasticBallViewActivity;
 import com.changf.canvas.activitys.RoundViewActivity;
 import com.changf.canvas.activitys.SolidRoundViewActivity;
 import com.changf.canvas.activitys.XfermodeRoundViewActivity;
@@ -27,6 +28,10 @@ public class MainActivity extends Activity {
 
     public void solidRoundView(View view){
         startActivity(new Intent(this,SolidRoundViewActivity.class));
+    }
+
+    public void elasticBall(View view){
+        startActivity(new Intent(this,ElasticBallViewActivity.class));
     }
 
 }
