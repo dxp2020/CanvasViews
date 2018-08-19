@@ -60,7 +60,7 @@ public class RotatingPlaneView extends View {
         canvas.translate(width/2,height/2);
 
         Path path = new Path();
-        path.addCircle(0,0,200, Path.Direction.CW);
+        path.addCircle(0,0,150, Path.Direction.CW);
 
         PathMeasure pathMeasure = new PathMeasure(path,false);
         currentValue+=0.005;

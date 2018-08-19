@@ -134,7 +134,7 @@ public class SolidRoundView extends View {
         //叠加图
         canvas.drawBitmap(overlayBitmap,ret,ret,paint);
 
-        src.recycle();
+//        src.recycle();
 
 
         RectF rect = new RectF(0,0,outWidth,outHeight);
