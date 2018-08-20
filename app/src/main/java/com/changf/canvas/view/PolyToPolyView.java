@@ -59,7 +59,7 @@ public class PolyToPolyView extends View {
         pointPaint.setStrokeCap(Paint.Cap.ROUND);
 
         mPolyMatrix = new Matrix();
-        mPolyMatrix.setPolyToPoly(src, 0, src, 0, 4);
+        mPolyMatrix.setPolyToPoly(src, 0, dst, 0, 4);
     }
 
     @Override

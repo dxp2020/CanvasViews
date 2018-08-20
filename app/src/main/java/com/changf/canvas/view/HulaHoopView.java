@@ -49,7 +49,6 @@ public class HulaHoopView extends View {
             canvas.drawLine(radius-20,0,radius,0,paint);
             canvas.rotate(10);
         }
-
     }
 
     private int getDefaultWidthSize(int widthMeasureSpec) {

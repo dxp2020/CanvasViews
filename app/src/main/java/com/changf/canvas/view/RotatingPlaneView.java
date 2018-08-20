@@ -74,6 +74,7 @@ public class RotatingPlaneView extends View {
 //        mMatrix.reset();
 //        mMatrix.postRotate(degrees, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2);   // 旋转图片
 //        mMatrix.postTranslate(pos[0]-mBitmap.getWidth() / 2,pos[1]-mBitmap.getHeight() / 2);
+
 //        方式二 getMatrix会得到pos值和tan值 并设置到Matrix中
         // 获取当前位置的坐标以及趋势的矩阵
         pathMeasure.getMatrix(pathMeasure.getLength() * currentValue, mMatrix, PathMeasure.TANGENT_MATRIX_FLAG | PathMeasure.POSITION_MATRIX_FLAG);
