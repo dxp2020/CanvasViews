@@ -28,4 +28,10 @@
         android:text="PolyToPoly小demo"
         android:onClick="elasticBall"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="canvasCircledemo"
+        android:onClick="canvasRotateCircle"
+        />
 </LinearLayout>

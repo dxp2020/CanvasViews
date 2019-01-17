@@ -19,6 +19,7 @@
         <activity android:name=".activitys.XfermodeRoundViewActivity"/>
         <activity android:name=".activitys.SolidRoundViewActivity"/>
         <activity android:name=".activitys.ElasticBallViewActivity"/>
+        <activity android:name=".activitys.CanvasRotateCircleActivity"/>
     </application>
 
 </manifest>

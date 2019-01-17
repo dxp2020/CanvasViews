@@ -74,12 +74,6 @@
             android:layout_margin="50dp"
             />
 
-        <com.changf.canvas.view.LinearGradientView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="50dp"
-            />
-
         <com.changf.canvas.view.PolyToPolyView
             android:layout_width="1000dp"
             android:layout_height="1000dp"

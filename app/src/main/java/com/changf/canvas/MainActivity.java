@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.changf.canvas.activitys.CanvasRotateCircleActivity;
 import com.changf.canvas.activitys.ElasticBallViewActivity;
 import com.changf.canvas.activitys.RoundViewActivity;
 import com.changf.canvas.activitys.SolidRoundViewActivity;
@@ -34,4 +35,7 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this,ElasticBallViewActivity.class));
     }
 
+    public void canvasRotateCircle(View view){
+        startActivity(new Intent(this,CanvasRotateCircleActivity.class));
+    }
 }
